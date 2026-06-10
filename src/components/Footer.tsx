@@ -41,9 +41,16 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 text-xs text-muted-foreground flex flex-wrap items-center justify-between gap-2">
-          <span>© {new Date().getFullYear()} Vel Trading Agency. All rights reserved.</span>
-          <span>Partnership firm · Madurai, Tamil Nadu, India</span>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 text-[10px] sm:text-xs text-muted-foreground flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 order-2 md:order-1 font-medium">
+            <Link to="/shipping-policy" className="hover:text-primary transition-colors">Shipping Policy</Link>
+            <Link to="/refund-policy" className="hover:text-primary transition-colors">Cancellation & Refund</Link>
+            <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-primary transition-colors">Terms & Conditions</Link>
+          </div>
+          <div className="text-center md:text-right order-1 md:order-2">
+            <span>© {new Date().getFullYear()} Vel Trading Agency. Madurai, India.</span>
+          </div>
         </div>
       </div>
     </footer>

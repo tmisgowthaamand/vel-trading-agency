@@ -48,7 +48,7 @@ export default function Header() {
 
             <div className="flex items-center gap-2">
               <div className="hidden sm:flex items-center rounded-full border border-border bg-secondary/60 p-0.5 text-xs font-medium">
-                {(["INR", "USD", "EUR"] as Currency[]).map((c) => (
+                {(["USD", "INR", "EUR"] as Currency[]).map((c) => (
                   <button
                     key={c}
                     onClick={() => setCurrency(c)}
@@ -97,7 +97,7 @@ export default function Header() {
               ))}
               <div className="flex items-center gap-1 px-3 pt-2">
                 <span className="text-xs text-muted-foreground mr-2">Currency:</span>
-                {(["INR", "USD", "EUR"] as Currency[]).map((c) => (
+                {(["USD", "INR", "EUR"] as Currency[]).map((c) => (
                   <button
                     key={c}
                     onClick={() => setCurrency(c)}

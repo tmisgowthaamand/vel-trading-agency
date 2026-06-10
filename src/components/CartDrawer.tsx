@@ -1,8 +1,9 @@
-import { X, Trash2, Plus, Minus, ShoppingBag } from "lucide-react";
+import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight } from "lucide-react";
 import { useShop } from "@/context/ShopContext";
+import { Link } from "@tanstack/react-router";
 
 export default function CartDrawer({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const { cart, removeFromCart, updateQty, cartTotalINR, format, clearCart } = useShop();
+  const { cart, removeFromCart, updateQty, cartTotal, format, clearCart } = useShop();
 
   return (
     <>
@@ -35,7 +36,7 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
                 <img src={item.product.image} alt={item.product.name} className="size-20 rounded-lg object-cover" />
                 <div className="flex-1 min-w-0">
                   <div className="font-medium truncate">{item.product.name}</div>
-                  <div className="text-xs text-muted-foreground">{format(item.product.priceINR)} / Kg</div>
+                  <div className="text-xs text-muted-foreground">{format(item.product.priceUSD)} / Kg</div>
                   <div className="mt-2 flex items-center gap-2">
                     <button onClick={() => updateQty(item.product.id, item.qty - 1)} className="size-7 grid place-items-center rounded-md border border-border hover:bg-background">
                       <Minus className="size-3.5" />
@@ -50,7 +51,7 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
                   </div>
                 </div>
                 <div className="text-right text-sm font-semibold whitespace-nowrap">
-                  {format(item.product.priceINR * item.qty)}
+                  {format(item.product.priceUSD * item.qty)}
                 </div>
               </div>
             ))
@@ -61,18 +62,23 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
           <div className="border-t border-border p-5 space-y-3">
             <div className="flex items-center justify-between text-sm">
               <span className="text-muted-foreground">Subtotal</span>
-              <span className="text-lg font-semibold">{format(cartTotalINR)}</span>
+              <span className="text-lg font-semibold">{format(cartTotal)}</span>
             </div>
-            <p className="text-xs text-muted-foreground">Final pricing & shipping confirmed after enquiry.</p>
-            <div className="flex gap-2">
-              <button onClick={clearCart} className="px-4 py-2.5 rounded-lg text-sm border border-border hover:bg-secondary">Clear</button>
-              <a
-                href={`https://wa.me/918124675463?text=${encodeURIComponent("Hello Vel Trading, I'd like to order:\n" + cart.map(i => `• ${i.product.name} × ${i.qty} Kg`).join("\n"))}`}
-                target="_blank" rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-sm font-semibold bg-primary text-primary-foreground hover:opacity-90"
+            <p className="text-xs text-muted-foreground leading-snug">Secure checkout available with Credit, Debit, and UPI options.</p>
+            <div className="flex flex-col gap-2 pt-2">
+              <Link
+                to="/checkout"
+                onClick={onClose}
+                className="w-full inline-flex items-center justify-center p-4 rounded-2xl text-sm font-bold bg-primary text-primary-foreground hover:opacity-90 shadow-lg shadow-primary/20 transition-all gap-2"
               >
-                Request Quote
-              </a>
+                Checkout Now <ArrowRight className="size-4" />
+              </Link>
+              <button
+                onClick={clearCart}
+                className="w-full py-3 rounded-xl text-xs font-semibold text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Clear Cart
+              </button>
             </div>
           </div>
         )}

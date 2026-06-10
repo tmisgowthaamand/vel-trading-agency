@@ -39,24 +39,29 @@
   --radius: 0.75rem;
 
   /* Earthy herbal palette */
-  --background: oklch(0.985 0.012 95);          /* warm ivory */
-  --foreground: oklch(0.22 0.03 130);           /* deep forest */
+  --background: oklch(0.985 0.012 95);
+  /* warm ivory */
+  --foreground: oklch(0.22 0.03 130);
+  /* deep forest */
 
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.22 0.03 130);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.22 0.03 130);
 
-  --primary: oklch(0.42 0.09 145);              /* leaf green */
+  --primary: oklch(0.42 0.09 145);
+  /* leaf green */
   --primary-foreground: oklch(0.985 0.01 95);
 
-  --secondary: oklch(0.93 0.025 95);            /* parchment */
+  --secondary: oklch(0.93 0.025 95);
+  /* parchment */
   --secondary-foreground: oklch(0.28 0.04 130);
 
   --muted: oklch(0.94 0.018 100);
   --muted-foreground: oklch(0.45 0.025 120);
 
-  --accent: oklch(0.66 0.14 55);                /* turmeric/amber */
+  --accent: oklch(0.66 0.14 55);
+  /* turmeric/amber */
   --accent-foreground: oklch(0.18 0.02 130);
 
   --destructive: oklch(0.55 0.22 25);
@@ -75,14 +80,22 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html, body {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html,
+  body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 {
+
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: -0.01em;
   }
@@ -90,10 +103,19 @@
 
 @layer utilities {
   .bg-hero-gradient {
+    /* Rich Botanic Dark Theme */
+    background-color: oklch(0.22 0.05 145);
     background-image:
-      radial-gradient(ellipse at top right, oklch(0.66 0.14 55 / 0.18), transparent 55%),
-      radial-gradient(ellipse at bottom left, oklch(0.42 0.09 145 / 0.18), transparent 55%),
-      linear-gradient(180deg, var(--cream), var(--background));
+      radial-gradient(circle at 70% 30%, oklch(0.42 0.09 145 / 0.15), transparent 60%),
+      radial-gradient(circle at 30% 70%, oklch(0.66 0.14 55 / 0.1), transparent 60%),
+      url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 15c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm51 30c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-42-6c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm60 30c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z' fill='%23ffffff' fill-opacity='0.04'/%3E%3C/svg%3E");
   }
-  .text-display { font-family: var(--font-display); }
+
+  .bg-display-gradient {
+    background: linear-gradient(135deg, oklch(0.35 0.08 145), oklch(0.15 0.04 145));
+  }
+
+  .text-display {
+    font-family: var(--font-display);
+  }
 }

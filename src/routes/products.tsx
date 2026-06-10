@@ -49,15 +49,20 @@ function ProductsPage() {
             <button
               key={c}
               onClick={() => setCat(c)}
-              className={`px-4 h-10 rounded-full text-sm font-medium border transition-colors ${
-                cat === c
+              className={`px-4 h-10 rounded-full text-sm font-medium border transition-colors ${cat === c
                   ? "bg-primary text-primary-foreground border-primary"
                   : "bg-card border-border hover:bg-secondary"
-              }`}
+                }`}
             >
               {c}
             </button>
           ))}
+        </div>
+      </div>
+
+      <div className="flex items-center justify-between mb-6">
+        <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mr-auto bg-secondary/50 px-3 py-1 rounded-full border border-border/50">
+          {filtered.length} {filtered.length === 1 ? "Product" : "Products"} Found
         </div>
       </div>
 

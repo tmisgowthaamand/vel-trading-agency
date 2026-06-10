@@ -1,51 +1,36 @@
-import avuri from "@/assets/products/avuri.jpg.asset.json";
-import moringaLeaves from "@/assets/products/moringa-leaves.jpg.asset.json";
-import thuthi from "@/assets/products/thuthi.jpg.asset.json";
-import flexSeed from "@/assets/products/flex-seed.jpg.asset.json";
-import sathakuppai from "@/assets/products/sathakuppai.jpg.asset.json";
-import vasambu from "@/assets/products/vasambu.jpg.asset.json";
-import marikolunthu from "@/assets/products/marikolunthu.jpg.asset.json";
-import vettiver from "@/assets/products/vettiver.jpg.asset.json";
-import vallarai from "@/assets/products/vallarai.jpg.asset.json";
-import poolankilangu from "@/assets/products/poolankilangu.jpg.asset.json";
-import kalachikai from "@/assets/products/kalachikai.jpg.asset.json";
-import rosePetal from "@/assets/products/rose-petal.jpg.asset.json";
-import karpogaArisi from "@/assets/products/karpoga-arisi.jpg.asset.json";
-import moringaSeed from "@/assets/products/moringa-seed.jpg.asset.json";
-import ashwagandha from "@/assets/products/ashwagandha.jpg.asset.json";
-import hibiscus from "@/assets/products/hibiscus.jpg.asset.json";
-import kandaThippili from "@/assets/products/kanda-thippili.jpg.asset.json";
-import moringaFlower from "@/assets/products/moringa-flower.jpg.asset.json";
+// Product data is now using local public images
 
 export type Product = {
   id: string;
   name: string;
   tamil?: string;
   category: string;
-  priceINR: number; // per Kg, mid-range
+  priceUSD: number; // per Kg, mid-range
+  priceRange?: string; // e.g. "0.48 - 0.96"
   image: string;
   description: string;
 };
 
 export const PRODUCTS: Product[] = [
-  { id: "avuri", name: "Avuri Leaves (Senna)", category: "Leaves", priceINR: 60, image: avuri.url, description: "Sun-dried senna leaves — traditionally used as a gentle herbal cleanse." },
-  { id: "moringa-leaves", name: "Moringa Leaves", category: "Leaves", priceINR: 110, image: moringaLeaves.url, description: "Nutrient-rich dried moringa leaves, packed with vitamins and minerals." },
-  { id: "thuthi", name: "Thuthi Leaves", category: "Leaves", priceINR: 40, image: thuthi.url, description: "Dried Thuthi (Abutilon) leaves — a classic Siddha herbal." },
-  { id: "flex-seed", name: "Flax Seed", category: "Seeds", priceINR: 120, image: flexSeed.url, description: "Cold-cleaned omega-3 rich flax seeds." },
-  { id: "sathakuppai", name: "Sathakuppai (Dill Seed)", category: "Seeds", priceINR: 180, image: sathakuppai.url, description: "Aromatic dill seeds, prized in postnatal care." },
-  { id: "vasambu", name: "Vasambu (Sweet Flag)", category: "Roots", priceINR: 180, image: vasambu.url, description: "Sliced sweet-flag rhizome, a traditional infant tonic." },
-  { id: "marikolunthu", name: "Marikolunthu", category: "Leaves", priceINR: 100, image: marikolunthu.url, description: "Fragrant Davana (Southernwood) — uplifting herbal aroma." },
-  { id: "vettiver", name: "Vettiver Roots", category: "Roots", priceINR: 200, image: vettiver.url, description: "Cooling Khus roots — natural coolant and natural fragrance." },
-  { id: "vallarai", name: "Vallarai (Gotu Kola)", category: "Leaves", priceINR: 180, image: vallarai.url, description: "Brain-tonic Vallarai leaves." },
-  { id: "poolankilangu", name: "Poolankilangu", category: "Roots", priceINR: 800, image: poolankilangu.url, description: "Premium Poolankilangu roots — prized aromatic root." },
-  { id: "kalachikai", name: "Kalachikai", category: "Seeds", priceINR: 110, image: kalachikai.url, description: "Caesalpinia (Fever-nut) seeds — traditional Siddha remedy." },
-  { id: "rose-petal", name: "Dried Rose Petals", category: "Flowers", priceINR: 350, image: rosePetal.url, description: "Naturally sun-dried rose petals for tea and skincare." },
-  { id: "karpoga-arisi", name: "Karpoga Arisi", category: "Seeds", priceINR: 115, image: karpogaArisi.url, description: "Bavanchi (Psoralea) seeds — Ayurveda's skin-care classic." },
-  { id: "moringa-seed", name: "Moringa Seeds", category: "Seeds", priceINR: 230, image: moringaSeed.url, description: "Whole moringa seeds — for planting or natural water purification." },
-  { id: "ashwagandha", name: "Amukkiran (Ashwagandha)", category: "Roots", priceINR: 275, image: ashwagandha.url, description: "Hand-graded ashwagandha roots — the classic adaptogen." },
-  { id: "hibiscus", name: "Dried Hibiscus", category: "Flowers", priceINR: 450, image: hibiscus.url, description: "Vibrant dried hibiscus for tea, hair care, and natural color." },
-  { id: "kanda-thippili", name: "Kanda Thippili (Long Pepper)", category: "Spices", priceINR: 550, image: kandaThippili.url, description: "Premium long pepper catkins, prized in Siddha & Ayurveda." },
-  { id: "moringa-flower", name: "Moringa Flowers", category: "Flowers", priceINR: 250, image: moringaFlower.url, description: "Delicate dried moringa blossoms, perfect for infusions." },
+  { id: "avuri", name: "Premium Senna Leaves (Avuri) - Sun Dried", category: "Leaves", priceUSD: 12.99, priceRange: "11.50 - 14.50", image: "/products/WhatsApp Image 2026-06-09 at 3.38.41 PM (1).jpeg", description: "Grade-A Senna leaves sourced from the arid regions of Tirunelveli. Rich in sennosides, naturally processed to preserve its gentle digestive cleansing properties. Perfect for herbal tea blends." },
+  { id: "moringa-leaves", name: "Wild-Harvested Moringa Oleifera Leaves", category: "Leaves", priceUSD: 19.50, priceRange: "17.00 - 22.00", image: "/products/WhatsApp Image 2026-06-09 at 3.38.45 PM (1).jpeg", description: "Superfood grade Moringa leaves, triple-washed and shade-dried to retain vibrant green color and high nutrient density. Contains 90+ nutrients and 46 antioxidants." },
+  { id: "thuthi", name: "Organic Thuthi Leaves (Abutilon Indicum)", category: "Leaves", priceUSD: 11.99, priceRange: "10.50 - 13.50", image: "/products/WhatsApp Image 2026-06-09 at 3.38.42 PM (1).jpeg", description: "Authentic Indian Abutilon leaves, prized in Siddha medicine for respiratory and digestive support. Hand-picked and free from any chemical processing." },
+  { id: "flex-seed", name: "Premium Triple-Cleaned Flax Seeds", category: "Seeds", priceUSD: 16.20, priceRange: "14.50 - 18.00", image: "/products/WhatsApp Image 2026-06-09 at 3.38.42 PM.jpeg", description: "Cold-cleaned, high-lignan flax seeds. Rich in Omega-3 fatty acids and dietary fiber. Ideal for dietary supplements and functional food applications." },
+  { id: "sathakuppai", name: "Pure Aromatic Sathakuppai (Dill Seed)", category: "Seeds", priceUSD: 22.50, priceRange: "20.00 - 25.00", image: "/products/WhatsApp Image 2026-06-09 at 3.38.45 PM (2).jpeg", description: "Highly aromatic Dill seeds sourced from southern plains. Widely used for its carminative properties and as a key ingredient in traditional postnatal care formulas." },
+  { id: "vasambu", name: "Hand-Graded Vasambu (Sweet Flag) Rhizome", category: "Roots", priceUSD: 24.99, priceRange: "21.50 - 28.50", image: "/products/WhatsApp Image 2026-06-09 at 3.38.46 PM (2).jpeg", description: "Aged Sweet Flag rhizomes, carefully sliced and dried. Known for its distinct woody aroma and traditional use in boosting immunity and digestive health in infants." },
+  { id: "marikolunthu", name: "Fragrant Marikolunthu (Davana) Leaves", category: "Leaves", priceUSD: 18.80, priceRange: "16.50 - 21.00", image: "/products/WhatsApp Image 2026-06-09 at 3.38.46 PM.jpeg", description: "Premium Artemisia Pallens (Davana). Prized for its unique fruity fragrance that changes when applied to skin. Extensively used in high-end perfumery and floral decorations." },
+  { id: "vettiver", name: "Premium Vettiver (Khus) Roots - Cooling Grade", category: "Roots", priceUSD: 31.50, priceRange: "28.00 - 35.00", image: "/products/WhatsApp Image 2026-06-09 at 3.38.41 PM.jpeg", description: "Deep-earth Vetiver roots, intensely fragrant. Naturally cooling and grounding. Ideal for making traditional cooling screens, root-infused water, and aromatherapy extracts." },
+  { id: "vallarai", name: "Cognitive Grade Vallarai (Gotu Kola) Leaves", category: "Leaves", priceUSD: 24.50, priceRange: "22.00 - 27.50", image: "/products/WhatsApp Image 2026-06-09 at 3.38.45 PM.jpeg", description: "Whole-leaf Centella Asiatica, shade-dried to maintain therapeutic phytochemicals. Renowned as a 'brain tonic' for improving memory, focus, and overall nervous system vitality." },
+  { id: "poolankilangu", name: "Rare White Turmeric (Poolankilangu) Roots", category: "Roots", priceUSD: 46.00, priceRange: "42.00 - 50.00", image: "/products/WhatsApp Image 2026-06-09 at 3.38.44 PM (2).jpeg", description: "Exclusvie Curcuma Zedoaria roots. A distinct camphoraceous aroma with incredible skin-brightening and anti-inflammatory properties. A staple in traditional Ayurvedic beauty rituals." },
+  { id: "kalachikai", name: "Kalachikai (Fever-Nut) Premium Seeds", category: "Seeds", priceUSD: 19.99, priceRange: "17.50 - 22.50", image: "/products/WhatsApp Image 2026-06-09 at 3.38.41 PM (2).jpeg", description: "Whole Caesalpinia Bonduc seeds. Traditionally used to balance hormonal levels and support blood sugar management. Hard-shelled, naturally pest-resistant seeds." },
+  { id: "rose-petal", name: "Dried Damask Rose Petals - Culinary Grade", category: "Flowers", priceUSD: 34.50, priceRange: "30.00 - 40.00", image: "/products/WhatsApp Image 2026-06-09 at 3.38.42 PM (2).jpeg", description: "Fragrant sun-dried Damask petals. Retains natural oils and crimson hue. Edible grade, perfect for gourmet tea, herbal infusions, desserts, and organic skincare formulations." },
+  { id: "karpoga-arisi", name: "Karpoga Arisi (Bavanchi) - Purity Guaranteed", category: "Seeds", priceUSD: 18.40, priceRange: "16.00 - 21.50", image: "/products/WhatsApp Image 2026-06-09 at 3.38.43 PM.jpeg", description: "Premium Psoralea Corylifolia seeds. Highly valued for supporting healthy skin pigmentation and dermatological wellness. Sourced from organic-certified farms." },
+  { id: "moringa-seed", name: "Moringa Oleifera PKM-1 Transformation Seeds", category: "Seeds", priceUSD: 38.00, priceRange: "34.00 - 42.00", image: "/products/WhatsApp Image 2026-06-09 at 3.38.43 PM (1).jpeg", description: "High-germination PKM-1 variety seeds. Dual purpose: ideal for establishing high-yield plantations or for natural water flocculation and clarification applications." },
+  { id: "ashwagandha", name: "Premium Ashwagandha (Amukkiran) Roots", category: "Roots", priceUSD: 42.50, priceRange: "38.50 - 48.00", image: "/products/WhatsApp Image 2026-06-09 at 3.38.46 PM (3).jpeg", description: "Select-grade Withania Somnifera roots. Harvested at peak maturity to ensure maximum withanolide concentration. The ultimate adaptogen for stress management and vitality." },
+  { id: "hibiscus", name: "Whole Dried Red Hibiscus Rosa-Sinensis Flowers", category: "Flowers", priceUSD: 28.80, priceRange: "25.00 - 32.50", image: "/products/WhatsApp Image 2026-06-09 at 3.38.44 PM.jpeg", description: "Botonically pure dried hibiscus blossoms. Rich in Vitamin C and AHA acids. Perfect for strengthening hair follicles or brewing vibrant, antioxidant-rich ruby herbal tea." },
+  { id: "kanda-thippili", name: "Premium Kanda Thippili (Long Pepper) Catkins", category: "Spices", priceUSD: 44.00, priceRange: "40.00 - 48.00", image: "/products/WhatsApp Image 2026-06-09 at 3.38.44 PM (1).jpeg", description: "High-pungency Piper Longum spikes. Expertly harvested and sun-cured. Known for its powerful bio-enhancing properties and use in traditional digestive and respiratory tonics." },
+  { id: "moringa-flower", name: "Delicate Organic Moringa Flowers (Dried)", category: "Flowers", priceUSD: 31.00, priceRange: "28.00 - 35.00", image: "/products/WhatsApp Image 2026-06-09 at 3.38.43 PM (2).jpeg", description: "Rare dried moringa blossoms. A subtle, honey-like aroma with potent health benefits. Rich in potassium and calcium. A unique addition to nutritional wellness products." },
 ];
+
 
 export const CATEGORIES = ["All", "Leaves", "Seeds", "Roots", "Flowers", "Spices"] as const;
