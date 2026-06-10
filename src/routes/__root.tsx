@@ -84,6 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "Authentic herbs, seeds, roots & florals sourced from Tamil Nadu." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "google-site-verification", content: "google10e30a372c8a947f" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
