@@ -12,4 +12,9 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Nitro configuration for Vercel deployment
+  // You can override this via NITRO_PRESET env var
+  nitro: {
+    preset: "vercel-edge",
+  },
 });
