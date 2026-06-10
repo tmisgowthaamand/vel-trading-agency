@@ -42,8 +42,9 @@ function Home() {
             </div>
             <div className="mt-12 flex items-center gap-8 border-t border-white/10 pt-10">
               <Stat n="18+" l="Premium Grades" />
-              <Stat n="PAN" l="India Shipping" />
+              <Stat n="FSSAI" l="Approved Trade" />
               <Stat n="MSME" l="Certified Agency" />
+              <Stat n="PAN" l="India Shipping" />
             </div>
           </div>
           <div className="relative flex justify-center">

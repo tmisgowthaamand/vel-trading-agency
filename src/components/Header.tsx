@@ -27,8 +27,8 @@ export default function Header() {
                 <Leaf className="size-5" />
               </div>
               <div className="leading-tight">
-                <div className="text-display text-lg font-semibold">Vel Trading</div>
-                <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Agency · Madurai</div>
+                <div className="text-display text-lg font-semibold leading-none">Vel Trading Agency</div>
+                <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1">Madurai · India</div>
               </div>
             </Link>
 
